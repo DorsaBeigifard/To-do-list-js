@@ -33,11 +33,10 @@ document.addEventListener("DOMContentLoaded", (e) => {
   createInDOM(toDos);
 });
 
-// when the form is submitted => create new to-do
+// create new to-do
 form.addEventListener("submit", addNewToDo);
-// add to array ToDos
 function addNewToDo(e) {
-  e.preventDefault(); // It prevents refreshing every time something is submitted
+  e.preventDefault(); 
 
   if (!formInput) return;
 
@@ -202,7 +201,7 @@ let toDoToEditId;
 function openEditForm(e) {
   toDoToEditId = Number(e.target.dataset.todoId);
   const toDos = getAllToDos();
-  const toDoToEdit = toDos.find((t) => t.id === toDoToEditId); // which todo will be edited ?
+  const toDoToEdit = toDos.find((t) => t.id === toDoToEditId);
   editToDoInput.value = toDoToEdit.title;
   openModal();
 }

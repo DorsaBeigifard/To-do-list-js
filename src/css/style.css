@@ -131,15 +131,14 @@ h2 {
   color: var(--gery-color);
 }
 
-.title-container__typewriter{
-margin-bottom: 4rem;}
+.title-container__typewriter {
+  margin-bottom: 4rem;
+}
 .title-container__typewriter h1 span {
   display: block;
   white-space: nowrap;
   overflow: hidden;
   width: 0; /* Set initial width to 0 */
-  animation: typing 1.8s steps(40, end) forwards,
-    indicator 0.6s step-end infinite;
 }
 
 .title-container__typewriter h1 span:nth-child(1) {
@@ -195,6 +194,11 @@ margin-bottom: 4rem;}
   gap: 3rem;
   overflow-y: scroll;
 }
+@media screen and (max-width: 768px) {
+  .app {
+    padding: 4rem 2rem;
+  }
+}
 
 .form__input-group {
   position: relative;
@@ -222,7 +226,7 @@ button {
 }
 
 button > i {
-  pointer-events: none; /* Prevent icon from being clickable */
+  pointer-events: none;
 }
 
 .form__input:hover {
@@ -232,7 +236,7 @@ button > i {
 .form__add-todo {
   position: absolute;
   top: 50%;
-  right: 1rem; /* Position the button */
+  right: 1rem;
   transform: translateY(-50%);
   background: none;
   border: none;
@@ -250,6 +254,7 @@ button > i {
   justify-content: space-between;
   color: var(--gery-color);
   padding: 1rem;
+  padding-top: 2rem;
   padding-bottom: 0;
   display: flex;
 }
@@ -278,7 +283,8 @@ button > i {
   .app__filter-mobile {
     display: flex;
     justify-content: space-between;
-    margin-top: 1rem;
+    margin-top: 2rem;
+
   }
   .app__form-container {
     justify-content: space-between;
@@ -307,10 +313,9 @@ button > i {
   .app__filter-mobile {
     display: flex;
     justify-content: space-between;
-    margin-top: 1rem;
+    margin-top: 2rem;
   }
   .app__form-container {
-    /* display: ; */
     justify-content: space-between;
   }
   .filter-options-select {
@@ -367,9 +372,8 @@ button > i {
   font-weight: 500;
   text-align: left;
   word-wrap: break-word;
-  word-break: break-word; 
+  word-break: break-word;
   color: var(--primary-color);
-  
 }
 
 .todo__details {

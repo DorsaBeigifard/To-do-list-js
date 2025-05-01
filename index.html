@@ -7,7 +7,6 @@
     <link rel="stylesheet" href="src/css/style.css" />
     <link rel="stylesheet" href="src/css/modal.css" />
     <link rel="stylesheet" href="src/css/fonts.css" />
-    <!-- font awesome-> دقت کن که ممکنه دچار اختلال توی کلیک کردن بشه. -->
     <link
       rel="stylesheet"
       href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css"
@@ -35,9 +34,6 @@
         </div>
       </div>
     </div>
-    <header>
-      <!-- manage themes here -->
-    </header>
     <main>
       <div class="title-container container">
         <div class="title-container__typewriter">
@@ -89,7 +85,6 @@
 
           <div class="todo">
             <ul class="todo__list">
-              <!-- This should be added by JS -->
               <!-- <li class="todo__item">
                 <p class="todo__title">todo #1</p>
                 <div class="todo__details">
@@ -111,5 +106,28 @@
       </div>
     </main>
     <script src="src/js/script.js"></script>
+
+    <!-- Title Animation -->
+    <script>
+      const words = document.querySelectorAll(".title-container__word");
+      function animateWords() {
+        words.forEach((word, index) => {
+          word.style.animation = "none";
+          word.style.animation = `typing 1.8s steps(40, end) forwards, blinking 0.6s step-end infinite`;
+          word.style.animationDelay = `${index * 2}s`;
+        });
+      }
+
+      function loopAnimation() {
+        animateWords();
+        setInterval(() => {
+          words.forEach((w) => (w.style.animation = "none"));
+          void document.body.offsetWidth;
+          animateWords();
+        }, 10000);
+      }
+
+      loopAnimation();
+    </script>
   </body>
 </html>
